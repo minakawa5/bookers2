@@ -25,11 +25,11 @@
       <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
        <li>
-        <%= link_to 'Home', users_show_path, class: 'nav-link text-light' %>
+        <%= link_to 'Home', user_path(current_user), class: 'nav-link text-light' %>
        </li>
 
        <li>
-        <%= link_to 'user',  users_edit_path, class: 'nav-link text-light' %>
+        <%= link_to 'user',  users_path, class: 'nav-link text-light' %>
        </li>
 
        <li>

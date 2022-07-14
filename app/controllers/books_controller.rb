@@ -11,16 +11,21 @@ class BooksController < ApplicationController
   end
 
   def index
+    @book = Book.new
+    @books = Book.all
+    @user = current_user
   end
 
   def show
+    @book = Book.find(params[:id])
   end
 
   def edit
+    @book = Book.find(params[:id])
   end
  private
 
   def book_params
-    params.require(:book).permit(:shop_name, :image, :caption)
+    params.require(:book).permit(:shop_name, :image, :caption, :title, :body)
   end
 end
